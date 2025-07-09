@@ -54,6 +54,7 @@ const getWeatherData = async function (city) {
   const responseTimezone = await fetch(timezoneUrl);
   const timezoneData = await responseTimezone.json();
   let zoneName = timezoneData.zoneName;
+  let icon = weatherData.weather[0].main.toLowerCase();
 
   document.querySelector(".city").innerHTML = weatherData.name;
   document.querySelector(".temp").innerHTML =
@@ -63,7 +64,7 @@ const getWeatherData = async function (city) {
   document.querySelector(".wind").innerHTML =
     Math.round(weatherData.wind.speed) + " km/h";
   const image = document.getElementById("weather-icon");
-  image.src = `images/${weatherData.weather[0].main}.png`;
+  image.src = `images/${icon}.png`;
 
   startClock(zoneName);
 
@@ -85,6 +86,7 @@ window.onload = function () {
       const responseTimezone = await fetch(timezoneUrl);
       const timezoneData = await responseTimezone.json();
       let zoneName = timezoneData.zoneName;
+      let icon = weatherData.weather[0].main.toLowerCase();
 
       document.querySelector(".city").innerHTML = weatherData.name;
       document.querySelector(".temp").innerHTML =
@@ -94,7 +96,7 @@ window.onload = function () {
       document.querySelector(".wind").innerHTML =
         Math.round(weatherData.wind.speed) + " km/h";
       const image = document.getElementById("weather-icon");
-      image.src = `images/${weatherData.weather[0].main}.png`;
+      image.src = `images/${icon}.png`;
 
       startClock(zoneName);
 
