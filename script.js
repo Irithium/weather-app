@@ -50,7 +50,7 @@ const getWeatherData = async function (city) {
 
   const weatherData = await response.json();
   console.log(weatherData);
-  const timezoneUrl = `http://api.timezonedb.com/v2.1/get-time-zone?key=${timezoneKey}&format=json&by=position&lat=${weatherData.coord.lat}&lng=${weatherData.coord.lon}`;
+  const timezoneUrl = `https://api.timezonedb.com/v2.1/get-time-zone?key=${timezoneKey}&format=json&by=position&lat=${weatherData.coord.lat}&lng=${weatherData.coord.lon}`;
   const responseTimezone = await fetch(timezoneUrl);
   const timezoneData = await responseTimezone.json();
   let zoneName = timezoneData.zoneName;
