@@ -79,7 +79,7 @@ window.onload = function () {
       const lon = position.coords.longitude;
 
       const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${weatherKey}&units=metric&lat=${lat}&lon=${lon}`;
-      const timezoneUrl = `http://api.timezonedb.com/v2.1/get-time-zone?key=${timezoneKey}&format=json&by=position&lat=${lat}&lng=${lon}`;
+      const timezoneUrl = `https://api.timezonedb.com/v2.1/get-time-zone?key=${timezoneKey}&format=json&by=position&lat=${lat}&lng=${lon}`;
       const response = await fetch(weatherUrl);
       const weatherData = await response.json();
       const responseTimezone = await fetch(timezoneUrl);
